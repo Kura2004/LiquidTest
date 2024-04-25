@@ -11984,7 +11984,7 @@ MonoBehaviour:
   useCurves: 1
   useCurvesHeight: 0.5
   crosswiseSpeed: 2
-  down_speed: 4
+  down_speed: 2
   mesh: {fileID: 392843509516777790}
   status: 2
   x_speed: 100
