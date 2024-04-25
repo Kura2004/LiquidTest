@@ -33,6 +33,8 @@ public class PlayerSelect : MonoBehaviour
         player_camera[index].Priority = 100;
         childObject[index].transform.position = save_point.position;
         childObject[index].transform.rotation = save_point.rotation;
+
+        Debug.Log("SetPlayer");
     }
 
     void save_point_move()
