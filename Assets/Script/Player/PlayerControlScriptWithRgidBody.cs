@@ -87,12 +87,14 @@ namespace UnityChan
                 if (currentBaseState.fullPathHash == locoState && enabled_jump)
                 {
                     //ステート遷移中でなかったらジャンプできる
-                    if (!anim.IsInTransition(0))
-                    {
-                        rb.AddForce(Vector3.up * jumpPower, ForceMode.VelocityChange);
-                        anim.SetBool("Jump", true);     // Animatorにジャンプに切り替えるフラグを送る
-                        enabled_jump = false;
-                    }
+
+                }
+
+                if (!anim.IsInTransition(0))
+                {
+                    rb.AddForce(Vector3.up * jumpPower, ForceMode.VelocityChange);
+                    anim.SetBool("Jump", true);     // Animatorにジャンプに切り替えるフラグを送る
+                    enabled_jump = false;
                 }
             }
             rb.AddForce(Vector3.down * Time.deltaTime * 100.0f * down_speed, ForceMode.Acceleration);

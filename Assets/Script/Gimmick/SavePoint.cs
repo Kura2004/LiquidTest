@@ -38,7 +38,6 @@ public class SavePoint : MonoBehaviour
         {
             PlayerPrefs.SetInt("key1", 99);
             PlayerPrefs.SetFloat("player_hp", PlayerHp.currentHp);
-            PlayerHp.Damage(-100);
         }
     }
 }
