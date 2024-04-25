@@ -4,7 +4,7 @@ using UnityChan;
 using UnityEngine;
 using Cinemachine;
 
-public class Ref : MonoBehaviour
+public class Reflection : MonoBehaviour
 {
     Vector3 save_v;
     private void OnCollisionEnter(Collision collision)
