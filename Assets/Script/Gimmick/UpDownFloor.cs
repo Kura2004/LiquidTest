@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ChangeScale : MonoBehaviour
+public class UpDownFloor : MonoBehaviour
 {
     const float max_y = 10.0f;
     bool down = false;
