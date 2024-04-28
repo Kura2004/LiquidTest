@@ -25,5 +25,6 @@ public class CursorController : MonoBehaviour
             Cursor.lockState = CursorLockMode.Locked;
             Debug.Log("CursorFalse");
         }
+        //Debug.Log("Cur");
     }
 }

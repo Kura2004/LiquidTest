@@ -24,14 +24,10 @@ namespace UnityChan
         public float useCurvesHeight = 0.5f;        // カーブ補正の有効高さ（地面をすり抜けやすい時には大きくする）
 
         // 以下キャラクターコントローラ用パラメタ
-        // 前進速度
-        public static float forwardSpeed = 8.0f;
-        // 後退速度
-        public static float backwardSpeed = 8.0f;
-        // 旋回速度
-        public static float rotateSpeed = 2.0f;
-        //横方向へのスピード
-        [SerializeField] float crosswiseSpeed = 2.0f;
+        public static float player_speed = 20.0f;
+        [SerializeField]
+        [Header("プレイヤーの速度")]
+        float speed;
         //下降速度
         [SerializeField] float down_speed;
         // ジャンプ威力
@@ -76,6 +72,7 @@ namespace UnityChan
 
             enabled_jump = true;
             isInvincible = false;
+            player_speed = speed;
         }
 
         void gas_update()
@@ -84,20 +81,20 @@ namespace UnityChan
             {   // スペースキーを入力したら
 
                 //アニメーションのステートがLocomotionの最中のみジャンプできる
-                if (currentBaseState.fullPathHash == locoState && enabled_jump)
+                if (currentBaseState.fullPathHash == locoState )
                 {
                     //ステート遷移中でなかったらジャンプできる
 
                 }
 
-                if (!anim.IsInTransition(0))
+                if (!anim.IsInTransition(0) && enabled_jump)
                 {
                     rb.AddForce(Vector3.up * jumpPower, ForceMode.VelocityChange);
                     anim.SetBool("Jump", true);     // Animatorにジャンプに切り替えるフラグを送る
                     enabled_jump = false;
                 }
             }
-            rb.AddForce(Vector3.down * Time.deltaTime * 100.0f * down_speed, ForceMode.Acceleration);
+            rb.AddForce(Vector3.down * Time.deltaTime * down_speed, ForceMode.Acceleration);
             rb.useGravity = false;
         }
 
@@ -127,7 +124,7 @@ namespace UnityChan
         {
             switch (status)
             {
-                case (int)Status.Water:
+                case (int)Status.Water: water_update(); break;
                 case (int)Status.Ice: water_update();break;
                 case (int)Status.Gas:gas_update();break;
             }
@@ -151,28 +148,19 @@ namespace UnityChan
             Screen_movement(mx, my);
 
             // 以下、キャラクターの移動処理
-            velocity = new Vector3(h * crosswiseSpeed, 0, v);  // 上下のキー入力からZ軸方向の移動量を取得
+            velocity = new Vector3(h , 0, v);  // 上下のキー入力からZ軸方向の移動量を取得
 
             if (status != (int)Status.Gas)
                 rb.useGravity = true;//ジャンプ中に重力を切るので、それ以外は重力の影響を受けるようにする
                                  // キャラクターのローカル空間での方向に変換
             velocity = transform.TransformDirection(velocity);
-            //以下のvの閾値は、Mecanim側のトランジションと一緒に調整する
-            if (v > 0.1)
-            {
-                velocity *= forwardSpeed;       // 移動速度を掛ける
-            }
-            else if (v < -0.1)
-            {
-                velocity *= backwardSpeed;  // 移動速度を掛ける
-            }
-            if (velocity.magnitude < 8.0f)
-            {
-                velocity = velocity.normalized * 5.0f;
-            }
+
+            //Debug.Log("速さ:" + velocity.magnitude * player_speed);
+            velocity = velocity.normalized * player_speed;
+
+
             // 上下のキー入力でキャラクターを移動させる
             transform.localPosition += velocity * Time.fixedDeltaTime;
-            Debug.Log("" + velocity);
 
             // 左右のキー入力でキャラクタをY軸で旋回させる
             //transform.Rotate(0, h * rotateSpeed, 0);

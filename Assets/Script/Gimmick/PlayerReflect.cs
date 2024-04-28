@@ -1,15 +1,31 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityChan;
 using UnityEngine;
+using Cinemachine;
 
 public class PlayerReflect : MonoBehaviour
 {
+    Vector3 save_v;
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.tag == "Player")
+        {
+            save_v = PlayerControlScriptWithRgidBody.velocity;
+        }
+    }
     private void OnCollisionStay(Collision collision)
     {
         if (collision.gameObject.tag == "Player")
         {
-            collision.rigidbody.velocity = new Vector3(0, 0, 0);
-            collision.transform.position = new Vector3(transform.position.x, 0.75f, transform.position.z);
+            collision.gameObject.transform.localPosition -= 3.0f*save_v * Time.deltaTime;
+        }
+    }
+
+    private void OnCollisionExit(Collision collision)
+    {
+        if (collision.gameObject.tag == "Player")
+        {
         }
     }
 }

@@ -30,7 +30,7 @@ public class AccelBord : MonoBehaviour
         {
             isAccel = false;
             accel_time = 0;
-            PlayerControlScriptWithRgidBody.forwardSpeed /= accel;
+            PlayerControlScriptWithRgidBody.player_speed /= accel;
         }
 
     }
@@ -39,7 +39,7 @@ public class AccelBord : MonoBehaviour
     {
         if (other.tag == "Player" && !isAccel)
         {
-            PlayerControlScriptWithRgidBody.forwardSpeed *= accel;
+            PlayerControlScriptWithRgidBody.player_speed *= accel;
             isAccel = true;
             Se.Accel();
         }

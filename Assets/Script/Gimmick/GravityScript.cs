@@ -10,9 +10,7 @@ public class GravityScript : MonoBehaviour
     {
         if (other.gameObject.tag == "Player")
         {
-            PlayerControlScriptWithRgidBody.forwardSpeed *= power;
-            PlayerControlScriptWithRgidBody.backwardSpeed *= power;
-            PlayerControlScriptWithRgidBody.rotateSpeed *= power;
+            PlayerControlScriptWithRgidBody.player_speed *= power;
             PlayerControlScriptWithRgidBody.enabled_jump = false;
             Debug.Log("Gravity");
         }
@@ -22,9 +20,7 @@ public class GravityScript : MonoBehaviour
     {
         if (other.gameObject.tag == "Player")
         {
-            PlayerControlScriptWithRgidBody.forwardSpeed /= power;
-            PlayerControlScriptWithRgidBody.backwardSpeed /= power;
-            PlayerControlScriptWithRgidBody.rotateSpeed /= power;
+            PlayerControlScriptWithRgidBody.player_speed /= power;
             PlayerControlScriptWithRgidBody.enabled_jump = true;
             Debug.Log("GravityExit");
         }
