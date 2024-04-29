@@ -308,6 +308,7 @@ namespace UnityChan
                 if (collision.gameObject.tag == "Boss" || collision.gameObject.tag == "Enemy")
                 {
                     StartCoroutine(Blink());
+                    PlayerHp.Damage(1000);
                     Debug.Log("Blink");
                     isInvincible = true;
                     Invoke("end_invincible", invincibly_time);

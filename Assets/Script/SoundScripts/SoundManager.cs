@@ -256,6 +256,8 @@ namespace Saito.SoundManager
                 Clicked,
                 Accel,
                 Shoot,
+                Gate,
+                Swicth,
             }
 
             [Tooltip("音の種類をラベルで設定")]

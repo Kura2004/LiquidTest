@@ -34,4 +34,6 @@ public class BossHp : MonoBehaviour
             LoadScenes.LoadGameOver();
         }
     }
+
+
 }

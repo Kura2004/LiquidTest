@@ -20,7 +20,7 @@ public class BossScript : MonoBehaviour
     {
 
         time += Time.deltaTime;
-        Debug.Log("" + time);
+        //Debug.Log("" + time);
 
         if (time > trigger_time)
             wave_set();
@@ -57,15 +57,6 @@ public class BossScript : MonoBehaviour
         wave();
     }
 
-    private void OnCollisionEnter(Collision collision)
-    {
-        if (collision.gameObject.tag == "Player")
-        {
-            GetComponent<CreateInk>().enabled = false;
-            PlayerHp.Damage(100);
-        }
-    }
-
     public static void wave_set()
     {
         wave_time = 0.5f;
@@ -76,5 +67,15 @@ public class BossScript : MonoBehaviour
         wave_time -= Time.deltaTime;
         if (wave_time > 0)
             boss.Translate(VectorAlpha.RandomVector3() * wave_time * 0.3f);
+    }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+
+        if (collision.gameObject.tag == "Player")
+        {
+            PlayerHp.Damage(1000);
+            Debug.Log("HitBoss");
+        }
     }
 }

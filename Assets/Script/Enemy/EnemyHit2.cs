@@ -11,5 +11,10 @@ public class EnemyHit2 : MonoBehaviour
         {
             PlayerHp.Damage(damage);
         }
+
+        if (other.tag == "Beam")
+        {
+            Destroy(gameObject);
+        }
     }
 }

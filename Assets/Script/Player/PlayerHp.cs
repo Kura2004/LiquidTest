@@ -26,14 +26,18 @@ public class PlayerHp : MonoBehaviour
     {
         if (!PlayerControlScriptWithRgidBody.isInvincible)
             currentHp = currentHp - damage;
+
+
         if (currentHp >= maxHp)
             currentHp = maxHp;
 
-        //Debug.Log("After currentHp : " + currentHp);
+        Debug.Log("After currentHp : " + currentHp);
 
         if (currentHp < -30.0f)
         {
             LoadScenes.LoadGameOver();
         }
     }
+
+
 }

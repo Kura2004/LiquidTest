@@ -14,4 +14,14 @@ public class Se : MonoBehaviour
     {
         SoundManager.Instance.PlaySe(SoundManager.SeSoundData.SE.Shoot);
     }
+
+    public static void Gate()
+    {
+        SoundManager.Instance.PlaySe(SoundManager.SeSoundData.SE.Gate);
+    }
+
+    public static void Swicth()
+    {
+        SoundManager.Instance.PlaySe(SoundManager.SeSoundData.SE.Swicth);
+    }
 }
