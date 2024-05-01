@@ -1079,15 +1079,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4752873994708548333, guid: 9fdba547f1508cf49883b0014fc92118, type: 3}
       propertyPath: m_LocalScale.x
-      value: 200
+      value: 250
       objectReference: {fileID: 0}
     - target: {fileID: 4752873994708548333, guid: 9fdba547f1508cf49883b0014fc92118, type: 3}
       propertyPath: m_LocalScale.y
-      value: 0.06666668
+      value: 0.08333334
       objectReference: {fileID: 0}
     - target: {fileID: 4752873994708548333, guid: 9fdba547f1508cf49883b0014fc92118, type: 3}
       propertyPath: m_LocalScale.z
-      value: 200
+      value: 250
       objectReference: {fileID: 0}
     - target: {fileID: 4752873994708548333, guid: 9fdba547f1508cf49883b0014fc92118, type: 3}
       propertyPath: m_LocalPosition.x
@@ -3212,7 +3212,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rain: {fileID: 1826758508313010174, guid: 68341875d0379d449a2f0a008ae1e3c7, type: 3}
-  max_count: 0
+  max_count: 10
   rain_rad: 50
   attack_interval: 0.3
   rb: {fileID: 4752365784192781551}
