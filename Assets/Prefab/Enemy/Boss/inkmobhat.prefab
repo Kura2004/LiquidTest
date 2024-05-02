@@ -641,6 +641,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   obj: {fileID: 6088935556221177680}
   reversal: 1
+  freeze_x: 1
 --- !u!114 &5983744441283537076
 MonoBehaviour:
   m_ObjectHideFlags: 0
