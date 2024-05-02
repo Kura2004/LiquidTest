@@ -2014,6 +2014,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   obj: {fileID: 1096674866}
   reversal: 1
+  freeze_x: 0
 --- !u!136 &1096674862
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -2536,6 +2537,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   obj: {fileID: 1450184637}
   reversal: 1
+  freeze_x: 0
 --- !u!136 &1450184633
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -6149,6 +6151,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   obj: {fileID: 6176751903579313731}
   reversal: 0
+  freeze_x: 0
 --- !u!1 &6176751902273142426
 GameObject:
   m_ObjectHideFlags: 0
@@ -7932,6 +7935,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   obj: {fileID: 7254154311747726924}
   reversal: 0
+  freeze_x: 0
 --- !u!1 &7254154313546119939
 GameObject:
   m_ObjectHideFlags: 0
@@ -8577,6 +8581,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   obj: {fileID: 9150619145173214024}
   reversal: 0
+  freeze_x: 0
 --- !u!54 &7907094058472223396
 Rigidbody:
   m_ObjectHideFlags: 0
