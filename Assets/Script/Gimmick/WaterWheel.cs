@@ -17,7 +17,7 @@ public class WaterWheel : MonoBehaviour
         }
     }
 
-    private void Update()
+    private void FixedUpdate()
     {
         RotateWheel();
     }
@@ -25,7 +25,7 @@ public class WaterWheel : MonoBehaviour
     private void RotateWheel()
     {
         // …ŽÔ‚ð‰ñ“]‚³‚¹‚é
-        elapsed_time -= Time.deltaTime;
+        elapsed_time -= Time.fixedDeltaTime;
 
         if (elapsed_time > 0)
             now_speed = Mathf.Pow(elapsed_time , 3.0f);
